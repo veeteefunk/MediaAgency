@@ -1,0 +1,219 @@
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 15px; /* the size of the text*/
+  line-height: 1.5; /* the height of every line in the text*/
+  padding: 0;
+  margin: 0;
+  background-color: #f4f4f4; /*light gray*/
+}
+
+/* Global */
+.container {
+  width: 80%; /* we give it a percentage value to make it responsive*/
+  margin: auto; /*horizontally centers that element within its container*/
+  overflow: hidden; /*hides the content if it overflows an element's box*/
+}
+
+ul {
+  /*we're removing the default margin and padding of the list*/
+  margin: 0; /*we're also removing the bullet points*/
+  padding: 0;
+}
+
+.button-1 {
+  height: 38px;
+  background: #61b3e7;
+  border: 0; /* we're removing the default border of buttons */
+  padding-left: 20px;
+  padding-right: 20px;
+  color: #ffffff;
+}
+
+.dark {
+  padding: 15px;
+  background: #35424a;
+  color: #ffffff;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* Header */
+header {
+  background: #35424a;
+  color: #ffffff; /* sets the color of the text to white*/
+  padding-top: 30px;
+  min-height: 70px; /*we set it like this to make it responsive*/
+  border-bottom: #61b3e7 3px solid; /*that blue line with a width of 3px and a "solid" style*/
+}
+
+header a {
+  color: #ffffff;
+  text-decoration: none; /* it removes the underline of the links*/
+  text-transform: uppercase; /* converts the text into uppercase*/
+  font-size: 16px;
+}
+
+header li {
+  /*float: left; /* places the items to the left*/
+  display: inline; /* lists the items right next to each other */
+  padding: 0 20px 0 20px; /* setting the padding spaces in right and left*/
+}
+
+header #branding {
+  float: left; /* we're only floating the "VTe Web Design" to the left */
+}
+
+header #branding h1 {
+  margin: 0;
+}
+
+header nav {
+  float: right; /* we're floating the navbar to the right*/
+  margin-top: 10px; /* we're putting it down a little bit to align it to branding*/
+}
+
+header .highlight,
+header .current a {
+  color: #61b3e7; /*we're basically highlighting the "VTe" from branding*/
+  font-weight: bold;
+}
+
+header a:hover {
+  color: #cccccc; /*this is the change we want to display when the cursor is on the link*/
+  font-weight: bold;
+}
+
+/* Showcase */
+#showcase {
+  text-align: center;
+  color: #173f5f;
+  min-height: 400px; /* for responsive purposes*/
+  background: url("../img/cellphone.jpg") no-repeat -300px -1100px; /*setting the image as the baxground for the showcase*/
+  /* those last two numbers refer to the 'x' and 'y' axis, we're moving it up so it can show what we want*/
+}
+
+#showcase h1 {
+  margin-top: 100px; /* we're moving the h1 down*/
+  font-size: 55px;
+  margin-bottom: 10px;
+}
+
+#showcase p {
+  font-size: 25px;
+  line-height: 15px;
+}
+
+/* Newsletter */
+#newsletter {
+  padding: 15px;
+  color: #ffffff;
+  background: #c0c0c0;
+}
+
+#newsletter h1 {
+  float: left;
+}
+
+#newsletter form {
+  float: right;
+  margin-top: 18px; /* we're moving the form down...*/
+}
+
+#newsletter input[type="email"] {
+  /*we're selecting a specific type of input*/
+  padding: 4px; /* notice how we can style pretty much EVERYTHING!*/
+  height: 25px;
+  width: 250px;
+}
+
+/* Boxes */
+
+#boxes {
+  margin-top: 20px;
+}
+
+#boxes .box {
+  float: left; /* I think this makes the boxes display next to each other... */
+  width: 30%; /*we're setting a percentage for responsive purposes */
+  padding: 10px;
+  text-align: center;
+}
+
+#boxes .box img {
+  /* we're making the images smaller, the height gets reduced automatically*/
+  width: 100px;
+}
+
+/* Main-col  */
+article#main-col {
+  float: left; /*we're placing the About Us to the left*/
+  width: 65%;
+}
+
+/* Sidebar */
+aside#sidebar {
+  float: right; /*we're placing the sidebar to the right*/
+  width: 30%;
+  margin-top: 10px;
+}
+
+aside#sidebar .quote input,
+aside#sidebar .quote textarea {
+  width: 90%;
+  padding: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Services */
+ul#services li {
+  list-style: none; /*takes away the bullets*/
+  padding: 20px;
+  border: #cccccc solid 1px;
+  margin-bottom: 5px;
+  background: #e6e6e6;
+}
+
+footer {
+  padding: 20px;
+  font-size: 15px;
+  margin-top: 20px;
+  color: #ffffff;
+  background-color: #07456f;
+  text-align: center;
+}
+
+/* Media Queries:
+these are the settings to make our website responsive
+Basically, just adjust the screen to a small one and see what needs to be changed */
+@media (max-width: 768px) {
+  header #branding,
+  header nav,
+  header nav li,
+  #newsletter h1,
+  #newsletter form,
+  #boxes .box,
+  article#main-col,
+  aside#sidebar {
+    float: none; /*we want all of these elements in the middle for the small screen*/
+    text-align: center;
+    width: 100%;
+  }
+  header {
+    padding: 20px; /*we want a little space in the bottom for the header*/
+  }
+  #showcase h1 {
+    margin-top: 40px; /*we're reducing the space compared to the original one (100px)*/
+  }
+  #newsletter button,
+  .quote button {
+    display: block;
+    width: 100%;
+  }
+  #newsletter form input[type="email"],
+  .quote input,
+  .quote textarea {
+    /*we're only selecting the email element*/
+    width: 100%;
+    margin-bottom: 5px;
+  }
+}
